@@ -68,6 +68,7 @@
   /* ---------- Query-string prefill (quote page) ---------- */
   var params = new URLSearchParams(window.location.search);
   var type = params.get("type");
+  if (type && !/^[a-z-]{1,20}$/.test(type)) type = null; // only simple slugs are valid selectors
   if (type) {
     var box = document.querySelector('input[name="coverage[]"][value="' + type + '"]');
     if (box) box.checked = true;

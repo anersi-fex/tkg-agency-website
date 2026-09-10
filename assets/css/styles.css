@@ -33,6 +33,7 @@
 /* ---------- Reset & base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+[id] { scroll-margin-top: calc(var(--nav-h) + 16px); }
 body {
   margin: 0;
   font-family: var(--font);
@@ -342,7 +343,7 @@ strong { font-weight: 700; }
 /* Sidebar (quote page) */
 .sidebar { display: grid; gap: 20px; position: sticky; top: calc(var(--nav-h) + 24px); }
 .sidebar-card { background: var(--g100); border-radius: var(--radius); padding: 26px 24px; }
-.sidebar-card h3 { margin-bottom: 14px; }
+.sidebar-card h3, .sidebar-card__title { font-size: 1.125rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 14px; }
 .sidebar-card ol { list-style: none; display: grid; gap: 12px; counter-reset: s; }
 .sidebar-card ol li { position: relative; padding-left: 36px; font-size: 0.95rem; color: var(--charcoal); counter-increment: s; }
 .sidebar-card ol li::before {
@@ -352,7 +353,7 @@ strong { font-weight: 700; }
 .sidebar-card ul li { position: relative; padding-left: 18px; font-size: 0.95rem; color: var(--charcoal); }
 .sidebar-card ul li::before { content: ""; position: absolute; left: 0; top: 0.65em; width: 8px; height: 8px; background: var(--red); border-radius: 2px; }
 .sidebar-card--ink { background: var(--ink); color: var(--white); }
-.sidebar-card--ink h3 { color: var(--white); }
+.sidebar-card--ink h3, .sidebar-card--ink .sidebar-card__title { color: var(--white); }
 .sidebar-card--ink p { color: rgba(255,255,255,0.85); }
 .sidebar-card--ink a { color: var(--white); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 
