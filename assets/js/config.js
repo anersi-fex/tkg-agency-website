@@ -13,10 +13,10 @@
  *               you can swap it in here so the raw address isn't in the page source.
  */
 window.KOKA_CONFIG = {
-  phone: "",
+  phone: "248-765-7675",
   email: "thekokagroup@gmail.com",
   hours: "Mon–Fri, 9am–6pm ET",
-  location: "Metro Detroit, Michigan",
+  location: "Troy, Michigan",
   formEndpoint: "https://formsubmit.co/ajax/thekokagroup@gmail.com",
   formFallback: "https://formsubmit.co/thekokagroup@gmail.com"
 };
