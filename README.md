@@ -23,41 +23,41 @@ Shared assets live in `assets/`:
 - `assets/css/styles.css` — all styling (brand tokens are at the top of the file)
 - `assets/js/config.js` — **the one file to edit for phone, email, hours, and form delivery**
 - `assets/js/main.js` — mobile menu, form sending, query-string prefill
-- `assets/img/` — logo mark and favicon (SVG)
+- `assets/img/` — favicon (SVG) and phone home-screen icon (PNG)
 
-## Things to set before launch
+## Brand
 
-1. **Phone number** — open `assets/js/config.js` and set `phone` (for example `"(586) 555-0100"`).
-   Until it is set, every phone link on the site stays hidden and the site falls back to email,
-   so nothing looks broken in the meantime.
-2. **Forms** — forms deliver to the email in `config.js` through [FormSubmit](https://formsubmit.co),
-   which needs no account. The **first submission** sends a one-time activation email to that
-   address; click the link in it and all three forms start delivering. FormSubmit then offers a
-   random alias string you can paste into `config.js` in place of the raw email address so it isn't
-   visible in the page source.
-   - To use a different service (Netlify Forms, Formspree, HubSpot, your CRM), change
-     `formEndpoint` / `formFallback` in `config.js` or point the `<form action>` at the new URL.
-3. **Hours and location** — also in `config.js`.
-4. **Founder blurb** — the "Our name" section on the home page names the founder. Edit the text in
-   `index.html` if you'd like different wording.
-5. **Privacy policy effective date** — in `privacy.html`, update if you change the policy.
+- Colors: black `#0d0d0d` backgrounds, brick red `#9b2d26` accents (tokens at the top of `styles.css`).
+- Logo: the "TKG" logotype in the header and footer is rendered as text (Montserrat 900) so it stays sharp at
+  any size. To use the official logo file instead, add a transparent PNG or SVG to `assets/img/` and replace
+  the `<span class="brand__logo">TKG</span>` in each page's header and footer with an `<img>` tag.
+
+## Things to set or check
+
+1. **Phone, email, hours, location** — all in `assets/js/config.js`. If `phone` is ever blank, phone links
+   hide automatically and the site falls back to email.
+2. **Forms** — forms deliver to the email in `config.js` through [FormSubmit](https://formsubmit.co).
+   The address is already activated. If you change the email, submit one form and click the new activation
+   link that FormSubmit sends. To switch to another service (Netlify Forms, Formspree, HubSpot, your CRM),
+   change `formEndpoint` / `formFallback` in `config.js` and the `<form action>` on each page.
+3. **Privacy policy effective date** — in `privacy.html`, update if you change the policy.
 
 ## Hosting
 
 Any static host works. Two easy options:
 
-- **GitHub Pages** — repo *Settings → Pages → Deploy from a branch*, pick `main` and `/ (root)`.
-  The `.nojekyll` file is already included.
+- **GitHub Pages** (current setup) — repo *Settings → Pages → Deploy from a branch*, `main` and `/ (root)`.
+  Custom domain `www.thekokagroup.com` is set there; DNS lives in Cloudflare (four A records on the root
+  pointing at GitHub Pages, and a `www` CNAME to `anersi-fex.github.io`, all "DNS only"). Every push to
+  `main` republishes the site in about a minute.
 - **Netlify / Vercel / Cloudflare Pages** — drag the folder in, or connect the repo. No build
   command; publish directory is the repo root.
-
-Point your domain at the host, and add the final URL to `robots.txt` / a sitemap if you want one.
 
 ## Not included on purpose
 
 - **Carrier logos** — add a logo strip on the home page once carrier appointments are live.
 - **Testimonials / reviews** — add when you have real ones (Google reviews embed works well).
-- **Team photos** — the design leaves room for a photo in the "Our name" section.
+- **Team photos / about section** — add when you're ready; the home page currently has no about section by choice.
 - **Online payments, claims filing, or policy login** — those go to each carrier's own portal; the
   contact page explains this to clients.
 
