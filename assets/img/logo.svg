@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="10" fill="#0d0d0d"/><svg x="7" y="7" width="50" height="50" viewBox="0 0 2000 850" preserveAspectRatio="xMidYMid meet"><defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 850">
+  <defs>
     <mask id="gmask" maskUnits="userSpaceOnUse" x="0" y="0" width="2000" height="850">
       <rect width="2000" height="850" fill="#fff"/>
       <polygon points="1715,300 4105,-1252 4500,-100 4500,300" fill="#000"/>
@@ -13,4 +14,4 @@
       <rect x="1530" y="300" width="455" height="190"/>
     </g>
   </g>
-</svg></svg>
+</svg>
