@@ -14,9 +14,9 @@
  */
 window.KOKA_CONFIG = {
   phone: "248-765-7675",
-  email: "thekokagroup@gmail.com",
+  email: "anersi@thekokagroup.com",
   hours: "Mon–Fri, 9am–6pm ET",
   location: "Troy, Michigan",
-  formEndpoint: "https://formsubmit.co/ajax/thekokagroup@gmail.com",
-  formFallback: "https://formsubmit.co/thekokagroup@gmail.com"
+  formEndpoint: "https://formsubmit.co/ajax/anersi@thekokagroup.com",
+  formFallback: "https://formsubmit.co/anersi@thekokagroup.com"
 };
