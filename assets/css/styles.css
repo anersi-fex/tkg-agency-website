@@ -155,10 +155,10 @@ strong { font-weight: 700; }
 .nav__links a { font-weight: 600; font-size: 0.92rem; opacity: 0.92; padding: 6px 0; border-bottom: 2px solid transparent; }
 .nav__links a:hover, .nav__links a[aria-current="page"] { opacity: 1; border-bottom-color: rgba(255,255,255,0.9); }
 .nav__cta { display: flex; align-items: center; gap: 16px; white-space: nowrap; }
-.nav__phone { font-weight: 700; font-size: 0.92rem; }
-.nav__phone:hover { text-decoration: underline; text-underline-offset: 3px; }
-.nav__secondary { font-weight: 600; font-size: 0.9rem; opacity: 0.92; }
-.nav__secondary:hover { opacity: 1; text-decoration: underline; text-underline-offset: 3px; }
+.nav__phone { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.92rem; color: rgba(255,255,255,0.88); padding-right: 16px; margin-right: 2px; border-right: 1px solid rgba(255,255,255,0.22); }
+.nav__phone svg { width: 16px; height: 16px; flex: none; color: var(--red-soft); }
+.nav__phone:hover { color: var(--white); text-decoration: underline; text-underline-offset: 3px; }
+.nav__secondary { display: inline-flex; }
 .nav-toggle {
   display: none; flex: none; background: transparent; border: 2px solid rgba(255,255,255,0.8); color: var(--white);
   border-radius: var(--radius); padding: 8px 10px; cursor: pointer; line-height: 0;
@@ -171,7 +171,8 @@ strong { font-weight: 700; }
 .mobile-menu { display: none; }
 
 @media (max-width: 1200px) {
-  .brand__sub, .nav__secondary { display: none; }
+  .brand__sub { display: none; }
+  .nav__secondary { display: none; }
 }
 @media (max-width: 960px) {
   .nav__links, .nav__secondary { display: none; }

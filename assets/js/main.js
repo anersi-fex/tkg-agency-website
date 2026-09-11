@@ -16,7 +16,8 @@
   document.querySelectorAll("[data-phone]").forEach(function (el) {
     if (phone) {
       el.textContent = phone;
-      if (el.tagName === "A") el.setAttribute("href", telHref);
+      var link = el.tagName === "A" ? el : el.closest("a");
+      if (link) link.setAttribute("href", telHref);
     }
   });
   document.querySelectorAll("[data-phone-wrap]").forEach(function (el) {
