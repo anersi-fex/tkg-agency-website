@@ -27,7 +27,10 @@ Shared assets live in `assets/`:
 
 ## Brand
 
-- Colors: black `#0d0d0d` backgrounds, brick red `#9b2d26` accents (tokens at the top of `styles.css`).
+Full guidelines for every TKG property (colors, type, logo rules, components, copy-paste tokens) are in
+[`BRAND.md`](BRAND.md). Hand that file to any other project or Claude Code session.
+
+- Colors: black `#0d0d0d` backgrounds, brick red `#972f26` accents (tokens at the top of `styles.css`).
 - Logo: `assets/img/logo.png` is the official TKG mark (transparent, 1600 px wide, taken from the Canva
   export). All icons are generated from it: `favicon.ico` and `favicon-*.png` (the K alone at 16/32 px,
   full TKG at 48 px and up), `icon-192/512.png` for Android, `apple-touch-icon.png` for iOS, and
