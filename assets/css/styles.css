@@ -5,9 +5,9 @@
    ========================================================================== */
 
 :root {
-  --red: #9b2d26;           /* brand brick red (logo) */
-  --red-hover: #85261f;
-  --red-deep: #9b2d26;
+  --red: #972f26;           /* exact brand red sampled from the logo file */
+  --red-hover: #7f271f;
+  --red-deep: #972f26;
   --red-soft: #e0554b;      /* red text on black */
   --red-tint: #f3dcd9;
   --red-tint-2: #faf0ee;
@@ -200,7 +200,7 @@ strong { font-weight: 700; }
 .hero::after, .page-head::after {
   content: ""; position: absolute; z-index: 0; pointer-events: none;
   right: -12%; top: -40%; width: 62vw; height: 180%;
-  background: radial-gradient(closest-side, rgba(155,45,38,0.55), rgba(155,45,38,0) 72%);
+  background: radial-gradient(closest-side, rgba(151,47,38,0.55), rgba(151,47,38,0) 72%);
 }
 .page-head::after { width: 40vw; height: 220%; top: -60%; right: -8%; opacity: 0.8; }
 .hero__mark {

@@ -23,14 +23,17 @@ Shared assets live in `assets/`:
 - `assets/css/styles.css` — all styling (brand tokens are at the top of the file)
 - `assets/js/config.js` — **the one file to edit for phone, email, hours, and form delivery**
 - `assets/js/main.js` — mobile menu, form sending, query-string prefill
-- `assets/img/` — favicon (SVG) and phone home-screen icon (PNG)
+- `assets/img/` — logo, favicons, app icons, link-preview image
 
 ## Brand
 
 - Colors: black `#0d0d0d` backgrounds, brick red `#9b2d26` accents (tokens at the top of `styles.css`).
-- Logo: the "TKG" logotype in the header and footer is rendered as text (Montserrat 900) so it stays sharp at
-  any size. To use the official logo file instead, add a transparent PNG or SVG to `assets/img/` and replace
-  the `<span class="brand__logo">TKG</span>` in each page's header and footer with an `<img>` tag.
+- Logo: `assets/img/logo.png` is the official TKG mark (transparent, 1600 px wide, taken from the Canva
+  export). All icons are generated from it: `favicon.ico` and `favicon-*.png` (the K alone at 16/32 px,
+  full TKG at 48 px and up), `icon-192/512.png` for Android, `apple-touch-icon.png` for iOS, and
+  `og-image.png` for link previews. If the logo ever changes, replace `logo.png` and regenerate the icons.
+- Cache busting: the `?v=` tag on icon and logo links in every page's `<head>` forces browsers to re-fetch
+  them. Bump it whenever an icon or the logo changes.
 
 ## Things to set or check
 
