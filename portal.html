@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Page not found · The Koka Group</title>
-  <meta name="description" content="That page doesn't exist.">
+  <title>Agent Portal · The Koka Group</title>
+  <meta name="description" content="Team sign-in for The Koka Group: Sales Coach, Command Center, and team sites in one place.">
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#0d0d0d">
-  <link rel="canonical" href="https://www.thekokagroup.com/404.html">
+  <link rel="canonical" href="https://www.thekokagroup.com/portal.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="The Koka Group">
-  <meta property="og:title" content="Page not found · The Koka Group">
-  <meta property="og:description" content="That page doesn't exist.">
-  <meta property="og:url" content="https://www.thekokagroup.com/404.html">
+  <meta property="og:title" content="Agent Portal · The Koka Group">
+  <meta property="og:description" content="Team sign-in for The Koka Group: Sales Coach, Command Center, and team sites in one place.">
+  <meta property="og:url" content="https://www.thekokagroup.com/portal.html">
   <meta property="og:image" content="https://www.thekokagroup.com/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="TKG — The Koka Group, insurance agency in Troy, Michigan">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Page not found · The Koka Group">
-  <meta name="twitter:description" content="That page doesn't exist.">
+  <meta name="twitter:title" content="Agent Portal · The Koka Group">
+  <meta name="twitter:description" content="Team sign-in for The Koka Group: Sales Coach, Command Center, and team sites in one place.">
   <meta name="twitter:image" content="https://www.thekokagroup.com/assets/img/og-image.png">
   <link rel="icon" href="favicon.ico?v=20260912b" sizes="16x16 32x32 48x48 64x64">
   <link rel="icon" href="assets/img/favicon-32.png?v=20260912b" type="image/png" sizes="32x32">
@@ -42,7 +42,7 @@
     "image": "https://www.thekokagroup.com/assets/img/og-image.png",
     "telephone": "+1-248-765-7675",
     "email": "anersi@thekokagroup.com",
-    "description": "That page doesn't exist.",
+    "description": "Team sign-in for The Koka Group: Sales Coach, Command Center, and team sites in one place.",
     "address": { "@type": "PostalAddress", "addressLocality": "Troy", "addressRegion": "MI", "addressCountry": "US" },
     "areaServed": { "@type": "State", "name": "Michigan" },
     "openingHours": "Mo-Fr 09:00-18:00",
@@ -100,18 +100,96 @@
   </div>
 </header>
 <main id="main">
-<section class="center-page">
+<section class="page-head page-head--portal">
   <div class="container">
-    <span class="eyebrow eyebrow--plain">Error 404</span>
-    <h1>That page isn't covered.</h1>
-    <p class="lead">The link may be old or mistyped. Here's where most people are headed.</p>
-    <div class="btn-row">
-      <a class="btn btn--red" href="index.html">Back to home</a>
-      <a class="btn btn--outline" href="quote.html">Get a quote</a>
-      <a class="btn btn--outline" href="contact.html">Contact us</a>
-    </div>
+    <span class="eyebrow">TKG team</span>
+    <h1>Agent Portal</h1>
+    <p class="lead">Your tools, one sign-in. Use your Koka Group Google account to open Sales Coach, Command Center, and the team sites.</p>
   </div>
 </section>
+
+<section class="section section--tight portal">
+  <div class="container">
+
+    <!-- Loading -->
+    <div class="portal-card" id="portal-loading">
+      <p class="muted">Loading…</p>
+    </div>
+
+    <!-- Sign-in not connected yet -->
+    <div class="portal-card" id="portal-pending" hidden>
+      <span class="portal-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+      <h2>Sign-in is being connected</h2>
+      <p>The team sign-in for this page is being set up. Check back shortly, or reach out to <a class="text-link" href="mailto:anersi@thekokagroup.com">anersi@thekokagroup.com</a> for a direct link in the meantime.</p>
+    </div>
+
+    <!-- Sign in -->
+    <div class="portal-card" id="portal-signin" hidden>
+      <span class="portal-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+      <h2>Sign in</h2>
+      <p>Team members sign in with their <strong>@thekokagroup.com</strong> Google account. No separate password to remember.</p>
+      <div class="google-btn" id="google-btn" aria-label="Sign in with Google"></div>
+      <p class="small muted portal-card__foot">Not on the team yet? <a class="text-link" href="careers.html">See open roles</a>.</p>
+    </div>
+
+    <!-- Wrong account -->
+    <div class="portal-card portal-card--denied" id="portal-denied" hidden>
+      <span class="portal-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg></span>
+      <h2>That account isn't on the team</h2>
+      <p>You signed in as <strong id="denied-email"></strong>. This portal is for <strong>@thekokagroup.com</strong> accounts only.</p>
+      <button class="btn btn--red" type="button" data-retry>Try another account</button>
+      <p class="small muted portal-card__foot">Need access? Email <a class="text-link" href="mailto:anersi@thekokagroup.com">anersi@thekokagroup.com</a>.</p>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="portal-dash" hidden>
+      <div class="portal-bar">
+        <div class="portal-bar__user">
+          <img id="user-avatar" class="portal-bar__avatar" alt="" referrerpolicy="no-referrer" hidden>
+          <div>
+            <div class="portal-bar__name" id="user-name"></div>
+            <div class="portal-bar__email" id="user-email"></div>
+          </div>
+        </div>
+        <button class="btn btn--outline btn--sm" type="button" data-signout>Sign out</button>
+      </div>
+
+      <div class="section-head">
+        <div class="section-head__title">
+          <span class="section-head__num">01</span>
+          <h2>Your tools</h2>
+        </div>
+        <span class="section-head__meta">Opens in a new tab · Each tool has its own login</span>
+      </div>
+      <div class="tiles-grid tiles-grid--tools" id="tiles-tools"></div>
+
+      <div class="section-head portal-head-gap">
+        <div class="section-head__title">
+          <span class="section-head__num">02</span>
+          <h2>Team sites</h2>
+        </div>
+        <span class="section-head__meta">Share links and dashboards</span>
+      </div>
+      <div class="tiles-grid tiles-grid--sites" id="tiles-sites"></div>
+
+      <div class="section-head portal-head-gap">
+        <div class="section-head__title">
+          <span class="section-head__num">03</span>
+          <h2>Updates</h2>
+        </div>
+        <span class="section-head__meta">Team news</span>
+      </div>
+      <ul class="updates" id="portal-updates"></ul>
+
+      <p class="small muted portal-foot">Missing a tool or need access to one? Email <a class="text-link" id="access-contact" href="mailto:anersi@thekokagroup.com">anersi@thekokagroup.com</a>.</p>
+    </div>
+
+  </div>
+</section>
+
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="assets/js/portal-config.js"></script>
+<script src="assets/js/portal.js"></script>
 </main>
 <footer class="site-footer">
   <div class="container">

@@ -45,6 +45,31 @@ Shared assets live in `assets/`:
    change `formEndpoint` / `formFallback` in `config.js` and the `<form action>` on each page.
 3. **Privacy policy effective date** — in `privacy.html`, update if you change the policy.
 
+## Agent Portal (team hub)
+
+`portal.html` is the team-only hub linked from the "Agent Portal" link in the top bar and footer. Team members
+sign in with their `@thekokagroup.com` Google account and see tiles for Sales Coach, Command Center, the
+hiring site, and the re-shop waitlist, plus an Updates list. Everything about it lives in
+`assets/js/portal-config.js`:
+
+- `googleClientId` — the OAuth client ID that turns sign-in on (see below). Blank = "sign-in is being connected".
+- `apps` — the tiles. Change a `url` when an app moves to its own subdomain.
+- `updates` — team announcements, newest first.
+
+Connect Google sign-in once (about five minutes):
+
+1. Go to https://console.cloud.google.com/apis/credentials (signed in as the Workspace admin), create a
+   project if asked, then **Create credentials → OAuth client ID → Web application**.
+2. Authorized JavaScript origins: `https://www.thekokagroup.com` and `https://thekokagroup.com`.
+   No redirect URI is needed.
+3. If prompted for the consent screen, choose **Internal** (Workspace users only) and give it the name
+   "TKG Agent Portal".
+4. Copy the Client ID (ends in `.apps.googleusercontent.com`) into `googleClientId` in
+   `assets/js/portal-config.js` and commit.
+
+The portal's sign-in gate runs in the browser and keeps the hub team-only; each app still enforces its own
+login, which is where real access control lives.
+
 ## Hosting
 
 Any static host works. Two easy options:

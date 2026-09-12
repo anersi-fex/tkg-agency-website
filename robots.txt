@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /thanks.html
+Disallow: /portal.html
 Sitemap: https://www.thekokagroup.com/sitemap.xml
