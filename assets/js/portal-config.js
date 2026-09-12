@@ -9,7 +9,7 @@
  * updates:        Team announcements, newest first. Keep each one short.
  */
 window.KOKA_PORTAL = {
-  googleClientId: "",
+  googleClientId: "99455166084-it4emc00r4akalltd24kjr3agkjfbrvu.apps.googleusercontent.com",
   allowedDomain: "thekokagroup.com",
   sessionHours: 12,
   accessContact: "anersi@thekokagroup.com",
