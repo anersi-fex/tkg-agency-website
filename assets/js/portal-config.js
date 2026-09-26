@@ -36,6 +36,16 @@ window.KOKA_PORTAL = {
       icon: "grid"
     },
     {
+      id: "gods-eye-view",
+      kind: "tool",
+      name: "God's Eye View",
+      tagline: "Live 3D globe",
+      description: "Live flights, ships, satellites, weather, and cameras on a 3D globe. Runs on Anersi's computer; start it there first.",
+      url: "http://localhost:4173",
+      status: "Local",
+      icon: "globe"
+    },
+    {
       id: "hiring-site",
       kind: "site",
       name: "Hiring Site",
