@@ -51,8 +51,8 @@ Full guidelines for every TKG property (colors, type, logo rules, components, co
 ## Agent Portal (team hub)
 
 `portal.html` is the team-only hub linked from the "Agent Portal" link in the top bar and footer. Team members
-sign in with their `@thekokagroup.com` Google account and see tiles for Sales Coach, Command Center, the
-hiring site, and the re-shop waitlist, plus an Updates list. Everything about it lives in
+sign in with their `@thekokagroup.com` Google account and see tiles for Sales Coach, Command Center, and the
+hiring site, plus an Updates list. Everything about it lives in
 `assets/js/portal-config.js`:
 
 - `googleClientId` — the OAuth client ID that turns sign-in on (see below). Blank = "sign-in is being connected".

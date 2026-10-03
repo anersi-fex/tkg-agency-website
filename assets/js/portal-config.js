@@ -36,16 +36,6 @@ window.KOKA_PORTAL = {
       icon: "grid"
     },
     {
-      id: "gods-eye-view",
-      kind: "tool",
-      name: "God's Eye View",
-      tagline: "Live 3D globe",
-      description: "Live flights, ships, satellites, weather, and cameras on a 3D globe. Runs on Anersi's computer; start it there first.",
-      url: "http://localhost:4173",
-      status: "Local",
-      icon: "globe"
-    },
-    {
       id: "hiring-site",
       kind: "site",
       name: "Hiring Site",
@@ -54,16 +44,6 @@ window.KOKA_PORTAL = {
       url: "https://tkg-hiring-site.vercel.app",
       status: "Live",
       icon: "users"
-    },
-    {
-      id: "reshop-waitlist",
-      kind: "site",
-      name: "Re-shop Waitlist",
-      tagline: "Client waitlist and demand summary",
-      description: "Clients join at /join. Work the list and the carrier demand summary from the owner dashboard at /admin.",
-      url: "https://tkg-reshop-waitlist.vercel.app/admin",
-      status: "Live",
-      icon: "refresh"
     }
   ],
 
