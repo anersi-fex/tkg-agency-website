@@ -29,9 +29,9 @@ window.KOKA_PORTAL = {
       id: "command-center",
       kind: "tool",
       name: "Command Center",
-      tagline: "Notes, reminders, and follow-ups",
-      description: "Every voice note and reminder, classified and organized. Add, review, and text from one place.",
-      url: "https://koka-command-center.vercel.app",
+      tagline: "Your AI chief of staff",
+      description: "Every Pocket recording turned into tasks, follow-ups, and client notes. Ask Jarvis anything, approve actions, and see what the Night Shift made.",
+      url: "https://tkg-command-center.vercel.app",
       status: "Live",
       icon: "grid"
     },
@@ -68,6 +68,11 @@ window.KOKA_PORTAL = {
   ],
 
   updates: [
+    {
+      date: "2026-10-03",
+      title: "New Command Center",
+      body: "The Command Center tile now opens the new TKG Command Center: Pocket recordings, tasks, Jarvis, and the overnight Night Shift."
+    },
     {
       date: "2026-09-12",
       title: "Agent Portal is live",
