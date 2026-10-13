@@ -42,6 +42,7 @@
     var domain = (cfg.allowedDomain || "").toLowerCase();
     var email = (p.email || "").toLowerCase();
     if (!p.email_verified) return false;
+    if ((cfg.allowedEmails || []).some(function (e) { return String(e).toLowerCase() === email; })) return true;
     if (p.hd && p.hd.toLowerCase() === domain) return true;
     return email.slice(-(domain.length + 1)) === "@" + domain;
   }

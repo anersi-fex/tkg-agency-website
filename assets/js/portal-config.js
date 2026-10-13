@@ -4,6 +4,7 @@
  * googleClientId: OAuth "Web application" client ID from Google Cloud Console.
  *                 Until it is filled in, the portal shows a "sign-in is being connected" notice.
  * allowedDomain:  Only Google accounts on this domain can get in.
+ * allowedEmails:  One-off personal Google accounts let in too (owner, 2026-10-13: Mark Dusevic).
  * apps:           Tiles shown after sign-in. "tool" tiles are the big ones; "site" tiles are secondary.
  *                 Change a url here when an app moves to its own subdomain (e.g. coach.thekokagroup.com).
  * updates:        Team announcements, newest first. Keep each one short.
@@ -11,6 +12,7 @@
 window.KOKA_PORTAL = {
   googleClientId: "99455166084-it4emc00r4akalltd24kjr3agkjfbrvu.apps.googleusercontent.com",
   allowedDomain: "thekokagroup.com",
+  allowedEmails: ["markdusevic@gmail.com"],
   sessionHours: 12,
   accessContact: "anersi@thekokagroup.com",
 
